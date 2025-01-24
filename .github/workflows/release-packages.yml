@@ -12,7 +12,7 @@ jobs:
       ref: ${{ github.event.ref }}
       packageName: package-for-development
       linuxBuildArgs: '--desktop gpu --opencv cmake'
-      androidBuildArgs: '--android arm64 --android_ndk_api_level 21'
+      androidBuildArgs: '--android arm64 --android_fat_apk_cpu=armeabi-v7a,arm64-v8a --solutions face_detection face_mesh iris hands pose --android_ndk_api_level 21'
       macosBuildArgs: '--desktop cpu --opencv cmake --macos_universal'
       iosBuildArgs: '--ios arm64 --opencv cmake'
       windowsBuildArgs: '--desktop cpu --opencv cmake'
@@ -24,7 +24,7 @@ jobs:
       ref: ${{ github.event.ref }}
       packageName: package-for-production
       linuxBuildArgs: '--linkopt="-s" --desktop gpu --opencv cmake'
-      androidBuildArgs: '--linkopt="-s" --android arm64 --android_ndk_api_level 21'
+      androidBuildArgs: '--linkopt="-s" --android arm64 --android_fat_apk_cpu=armeabi-v7a,arm64-v8a --solutions face_detection face_mesh iris hands pose --android_ndk_api_level 21'
       macosBuildArgs: '--linkopt="-s" --desktop cpu --opencv cmake --macos_universal'
       iosBuildArgs: '--linkopt="-s" --ios arm64 --opencv cmake'
       windowsBuildArgs: '--desktop cpu --opencv cmake'
